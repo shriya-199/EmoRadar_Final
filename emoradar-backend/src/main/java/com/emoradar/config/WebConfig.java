@@ -8,10 +8,10 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-            .allowedOrigins("https://emoradar.netlify.app") // ✅ allow Netlify frontend
+        registry.addMapping("/api/**")
+            .allowedOrigins("https://radaremo.netlify.app")
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-            .allowedHeaders("*")
-            .allowCredentials(true);
+            .allowedHeaders("*");
     }
 }
+

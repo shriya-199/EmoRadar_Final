@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "EmoRadar Site Blocker",
+  "version": "1.0",
+  "description": "Blocks distracting sites based on emotional state.",
+  "permissions": ["declarativeNetRequest", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "EmoRadar Blocker"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "static_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

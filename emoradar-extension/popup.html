@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EmoRadar Focus Timer</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        padding: 20px;
+        width: 250px;
+      }
+
+      .modal {
+        display: none;
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(200, 200, 200, 0.3);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+        animation: scaleIn 0.3s ease-out forwards;
+      }
+
+      .show {
+        display: block;
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .btn {
+        margin-top: 12px;
+        padding: 6px 14px;
+        border: none;
+        background-color: #6366f1;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #4f46e5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="focusAlert" class="modal">
+      <h3>⏰ Focus Session Ended</h3>
+      <p>Take a break or start a new session.</p>
+      <button class="btn" onclick="hidePopup()">Got it</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

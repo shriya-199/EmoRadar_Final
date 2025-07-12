@@ -7,11 +7,12 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.cors.*;
-
+import org.springframework.core.annotation.Order;
 import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
+@Order(0)
 public class SecurityConfig {
 
     @PostConstruct
